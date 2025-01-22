@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Document</title>
+    </head>
+    <script>
+        document.addEventListener("DOMContentLoaded", (e) => {
+            document.querySelector("body").style.display = "flex";
+            document.querySelector("body").style.transform = "translateX(100vw)";
+
+            setTimeout(() => {
+                document.querySelector("body").style.transform = "translateX(0)";
+            }, 300);
+        });
+
+        const transitionToPage = (href) => {
+            document.querySelector("body").style.transform = "translateX(-120vw)";
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 300);
+        };
+    </script>
+
+    <body>
+        <div class="container">
+            <h1 onclick="transitionToPage('./second.html')">THE INDEX PAGE</h1>
+        </div>
+    </body>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            transition: all 0.5s;
+            display: none;
+            position: absolute;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #9999ff;
+        }
+    </style>
+</html>
